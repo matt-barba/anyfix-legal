@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Disconnect AnyFix Books</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0 auto; padding: 48px 20px 96px; max-width: 46rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #1e293b; background: #ffffff;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .4em; color: #020617; }
+  h2 { font-size: 1.15rem; margin: 2.2em 0 .6em; color: #020617; }
+  p { margin: 0 0 1em; }
+  ul { margin: 0 0 1em; padding-left: 1.3em; }
+  li { margin-bottom: .35em; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+          background: #f1f5f9; padding: .1em .35em; border-radius: 3px; }
+  .updated { color: #64748b; font-size: .92rem; margin-bottom: 2.5em; }
+  footer { margin-top: 4em; padding-top: 1.5em; border-top: 1px solid #e2e8f0;
+            color: #64748b; font-size: .9rem; }
+  a { color: #2563eb; }
+</style>
+</head>
+<body>
+<h1>Disconnect AnyFix Books</h1>
+<p>Access can be withdrawn at any time, and takes effect immediately.</p>
+<h2>From QuickBooks Online</h2>
+<p>Sign in to QuickBooks Online, then go to <strong>Settings</strong> and open <strong>Apps</strong>. Find <strong>AnyFix Books</strong> in the list of connected apps and choose <strong>Disconnect</strong>. Once disconnected, the integration can no longer read or write anything in the company file.</p>
+<p>This is the authoritative way to end access, because it is performed from the QuickBooks account itself and does not depend on the integration cooperating.</p>
+<h2>From the integration</h2>
+<p>Because AnyFix Books runs locally rather than as a hosted service, the stored credentials also live locally. Revoking the token at Intuit&#x27;s OAuth revocation endpoint ends the session, and removing the entries from the macOS Keychain under the service name <code>anyfix-qbo</code> removes the stored client ID, client secret, refresh token and company id from the machine.</p>
+<h2>What happens to data</h2>
+<p>The integration stores no copy of the accounting data. Records live in QuickBooks Online and are unaffected by disconnecting. The only local artifacts are the credentials described above and an error log containing API fault messages, which holds no credentials and no accounting records.</p>
+<h2>Contact</h2>
+<p>AnyFix Systems LLC</p>
+<ul>
+<li>matt.barba@anyfix.ai</li>
+<li>michael.pressler@anyfix.ai</li>
+</ul>
+<footer><a href="../">AnyFix Systems LLC</a></footer>
+</body>
+</html>
