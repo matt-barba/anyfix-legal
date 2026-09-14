@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnyFix Books — Privacy Policy</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0 auto; padding: 48px 20px 96px; max-width: 46rem;
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: #1e293b; background: #ffffff;
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .4em; color: #020617; }
+  h2 { font-size: 1.15rem; margin: 2.2em 0 .6em; color: #020617; }
+  p { margin: 0 0 1em; }
+  ul { margin: 0 0 1em; padding-left: 1.3em; }
+  li { margin-bottom: .35em; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em;
+          background: #f1f5f9; padding: .1em .35em; border-radius: 3px; }
+  .updated { color: #64748b; font-size: .92rem; margin-bottom: 2.5em; }
+  footer { margin-top: 4em; padding-top: 1.5em; border-top: 1px solid #e2e8f0;
+            color: #64748b; font-size: .9rem; }
+  a { color: #2563eb; }
+</style>
+</head>
+<body>
+<h1>AnyFix Books — Privacy Policy</h1>
+<p class="updated">Last updated: September 14, 2026</p>
+<h2>What this application is</h2>
+<p>AnyFix Books is a private integration built and operated by AnyFix Systems LLC (&quot;AnyFix&quot;, &quot;we&quot;, &quot;us&quot;) for its own internal bookkeeping. It connects to a single QuickBooks Online company file — the one belonging to AnyFix Systems LLC — and is not offered, sold, or made available to any other person or organization. There are no user accounts, no sign-up, and no customers of this application other than AnyFix Systems LLC itself.</p>
+<h2>What data the application accesses</h2>
+<p>When connected, the application can read and write accounting records in that one QuickBooks Online company file, using the QuickBooks Online Accounting API under the <code>com.intuit.quickbooks.accounting</code> scope. In practice this means:</p>
+<ul>
+<li>Company information</li>
+<li>Chart of accounts</li>
+<li>Vendors</li>
+<li>Expenses and journal entries</li>
+<li>Standard financial reports (Profit and Loss, Balance Sheet, Transaction List, General Ledger)</li>
+</ul>
+<p>The application creates and updates records. It does not delete QuickBooks records.</p>
+<p>The application does not access bank credentials, payment card numbers, payroll records, or customer payment instruments.</p>
+<h2>How credentials are stored</h2>
+<p>OAuth 2.0 credentials — the client ID, client secret, and refresh token — are stored in the macOS Keychain on a computer controlled by AnyFix Systems LLC. They are not written to any file, not stored on any server, and not transmitted anywhere other than to Intuit&#x27;s own authentication endpoints. There is no hosted backend, no database, and no cloud storage associated with this application.</p>
+<p>Access tokens are held in memory only, for the life of a running process.</p>
+<h2>Use of artificial intelligence, and the resulting data transfer</h2>
+<p>This is the most important disclosure in this document, so it is stated plainly.</p>
+<p>AnyFix Books is a Model Context Protocol (MCP) server. Its operations are invoked by an AI assistant — Claude, provided by Anthropic — acting on instructions from an authorized person at AnyFix Systems LLC. As a direct consequence, accounting data retrieved from QuickBooks Online is transmitted to Anthropic&#x27;s API in order to fulfill those instructions, and instructions containing accounting details are sent there as well.</p>
+<p>Anthropic&#x27;s handling of that data is governed by Anthropic&#x27;s own terms and privacy policy. AnyFix Systems LLC does not use QuickBooks data to train any model.</p>
+<p>No QuickBooks data is transmitted to any other third party. It is not sold, rented, licensed, or shared for advertising, analytics, or any other purpose.</p>
+<h2>Error logs</h2>
+<p>Failed API calls are recorded to a local file on the operator&#x27;s computer (<code>~/.anyfix-books/qbo-errors.log</code>). Each entry contains the operation attempted, the HTTP status returned, the <code>intuit_tid</code> identifier from Intuit&#x27;s response, and the error body Intuit returned. This exists so that a problem can be reported to Intuit support with enough detail to trace it.</p>
+<p>No credential — client ID, client secret, refresh token, or access token — is written to this log. The log rotates and is capped at five files of one megabyte each, so it does not grow without limit. Successful calls write nothing.</p>
+<h2>Data retention</h2>
+<p>QuickBooks records themselves live in QuickBooks Online and are retained under Intuit&#x27;s terms, not ours. The credentials described above are retained until the connection is revoked. Error log entries are retained until rotated out by the size cap described above.</p>
+<h2>Revoking access</h2>
+<p>Access can be revoked at any time from the QuickBooks Online account, under Settings → Apps, or through Intuit&#x27;s OAuth token revocation endpoint. Revocation immediately ends the application&#x27;s ability to read or write anything.</p>
+<h2>Children&#x27;s data</h2>
+<p>This application is not directed to children and processes no data about children.</p>
+<h2>Changes to this policy</h2>
+<p>If the application&#x27;s behavior changes in a way that affects what is described here, this page will be updated and the &quot;last updated&quot; date above changed.</p>
+<h2>Contact</h2>
+<p>AnyFix Systems LLC</p>
+<ul>
+<li>matt.barba@anyfix.ai</li>
+<li>michael.pressler@anyfix.ai</li>
+</ul>
+<footer><a href="../">AnyFix Systems LLC</a></footer>
+</body>
+</html>
