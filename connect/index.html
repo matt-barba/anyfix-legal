@@ -31,6 +31,10 @@
 <p>Run the authorization command:</p>
 <p><code>~/anyfix-books/qbo-mcp/.venv/bin/qbo-auth</code></p>
 <p>It asks for the Intuit app&#x27;s client ID, client secret, environment and redirect URI, then opens the QuickBooks consent screen in a browser. Approving the consent screen returns an authorization code, which the tool exchanges for tokens and stores in the macOS Keychain. Nothing is written to disk in plain text.</p>
+<h2>If you have just been redirected to this page</h2>
+<p>This page is the registered redirect URI for the integration, so approving the QuickBooks consent screen lands here. The authorization code is in the address bar, not on this page.</p>
+<p>Copy the <strong>full URL</strong> from the address bar, return to the terminal running <code>qbo-auth</code>, press Ctrl-C to switch to paste mode, and paste it at the prompt. The tool reads the code and company id out of the URL and completes the connection.</p>
+<p>The code in that URL is single-use and expires within minutes. Do not share it.</p>
 <h2>Confirming the connection</h2>
 <p>After authorizing, the company file that is connected can be confirmed by running the integration&#x27;s <code>qbo_company_info</code> operation. It reports the company name and whether the sandbox or production environment is live. This should be checked before any records are written.</p>
 <h2>When a reconnect is needed</h2>
